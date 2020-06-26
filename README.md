@@ -14,7 +14,7 @@ node-sinovate is a Sinovate client for Node.js. It is a fork of the excellent Ka
 
 You'll need a running instance of a [Sincoind](https://github.com/SINOVATEblockchain/SIN-core.git) to connect with. 
 
-Then, install the node-astracoin NPM package.
+Then, install the node-sinovate NPM package.
 
 `npm install node-sinovate`
 
