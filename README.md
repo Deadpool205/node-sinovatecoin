@@ -1,37 +1,37 @@
-# A Node.js Astracoin Client!
+# A Node.js Sinovate Client!
 
 
             
 
 
-node-astracoin is a astracoin client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with astracoin. The purpose of this repository is:
+node-sinovate is a Sinovate client for Node.js. It is a fork of the excellent Kapitalize Bitcoin Client (now removed from GitHub) intended for use with Sinovate. The purpose of this repository is:
 
-* Provide a one-stop resource for the Node.js developer to get started with astracoin integration.
-* Promote Node.js development of astracoin web apps.
-* Identify and address any incompatibilities with the astracoin and Bitcoin APIs that exist now and/or in the future.
+* Provide a one-stop resource for the Node.js developer to get started with Sinovate integration.
+* Promote Node.js development of Sinovate web apps.
+* Identify and address any incompatibilities with the Sinovate and Bitcoin APIs that exist now and/or in the future.
 
 ## Dependencies
 
-You'll need a running instance of a [Astracoind](https://github.com/CryptoLover705/astra-wallets/releases/download/1.0.0.2/Astralinux.zip) to connect with. 
+You'll need a running instance of a [Sincoind](https://github.com/SINOVATEblockchain/SIN-core.git) to connect with. 
 
 Then, install the node-astracoin NPM package.
 
-`npm install node-astracoin`
+`npm install node-sinovate`
 
 or
 
-`npm install git://github.com/CryptoLover705/node-astracoincoin/`
+`npm install git://github.com/Deadpool205/node-sinovate/`
 
 ## Examples
 
 Some code examples follow below.
 
 ```js
-var astracoin = require('node-astracoin')()
+var sinovate = require('node-sinovate')()
 
-astracoin.auth('myusername', 'mypassword')
+sinovate.auth('myusername', 'mypassword')
 
-astracoin.getDifficulty(function() {
+sinovate.getDifficulty(function() {
     console.log(arguments);
 })
 
@@ -42,9 +42,9 @@ astracoin.getDifficulty(function() {
 Pretty much everything is chainable.
 
 ```js
-var astracoin = require('node-astracoin')()
+var sinovate = require('node-sinovate')()
 
-astracoin
+sinovate
 .auth('MyUserName', 'mypassword')
 .getNewAddress()
 .getBalance()
@@ -52,10 +52,8 @@ astracoin
 
 ## Methods
 
-The [Astracoin API](http://api.astra-coin.com) is supported as direct methods. Use either camelcase or lowercase.
-
 ```js
-astracoin.getNewAddress(function(err, address) {
+sinovate.getNewAddress(function(err, address) {
     this.validateaddress(address, function(err, info) {
 
     })
@@ -67,9 +65,9 @@ Executes the given command with optional arguments. Function `callback` defaults
 All of the API commands are supported in lowercase or camelcase. Or uppercase. Anycase!
 
 ```js
-astracoin.exec('getNewAddress')
+sinovate.exec('getNewAddress')
 
-astracoin.exec('getbalance', function(err, balance) {
+sinovate.exec('getbalance', function(err, balance) {
 
 })
 ```
@@ -79,7 +77,7 @@ astracoin.exec('getbalance', function(err, balance) {
 Accepts either key & value strings or an Object containing settings, returns `this` for chainability.
 
 ```js
-astracoin.set('host', '127.0.0.1')
+sinovate.set('host', '127.0.0.1')
 ```
 
 ### .get(key [string])
@@ -87,7 +85,7 @@ astracoin.set('host', '127.0.0.1')
 Returns the specified option's value
 
 ```js
-astracoin.get('user')
+sinovate.get('user')
 ```
 
 ### .auth(user [string], pass [string])
@@ -96,7 +94,7 @@ Generates authorization header, returns `this` for chainability
 
 ## Commands
 
-All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowercase or camelcase form.
+All [Sinovate API](http://api.astra-coin.com) commands are supported, in lowercase or camelcase form.
 
 <table>
 <tr>
@@ -108,7 +106,7 @@ All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowerc
 <tr>
 <td> addmultisigaddress </td>
 <td> [nrequired] ["key","key"] [account] </td>
-<td> <b>Currently only available on Mainnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a astracoin address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
+<td> <b>Currently only available on Mainnet</b> Add a nrequired-to-sign multisignature address to the wallet. Each key is a sinovate address or hex-encoded public key. If [account] is specified, assign address to [account]. </td>
 <td> N
 </td></tr>
 <tr>
@@ -119,8 +117,8 @@ All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowerc
 </td></tr>
 <tr>
 <td> dumpprivkey </td>
-<td> [astracoinaddress] </td>
-<td> Reveals the private key corresponding to <astracoinaddress< </td>
+<td> [sinovateaddress] </td>
+<td> Reveals the private key corresponding to <sinovateaddress< </td>
 <td> Y
 </td></tr>
 <tr>
@@ -131,14 +129,14 @@ All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowerc
 </td></tr>
 <tr>
 <td> getaccount </td>
-<td> [astracoinaddress] </td>
+<td> [sinovateaddress] </td>
 <td> Returns the account associated with the given address. </td>
 <td> N
 </td></tr>
 <tr>
 <td> getaccountaddress </td>
 <td> [account] </td>
-<td> Returns the current astracoin address for receiving payments to this account. </td>
+<td> Returns the current sinovate address for receiving payments to this account. </td>
 <td> N
 </td></tr>
 <tr>
@@ -192,7 +190,7 @@ All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowerc
 <tr>
 <td> getgenerate </td>
 <td> </td>
-<td> Returns true or false whether astracoind is currently generating hashes </td>
+<td> Returns true or false whether sinovated is currently generating hashes </td>
 <td> N
 </td></tr>
 <tr>
@@ -255,8 +253,8 @@ All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowerc
 </td></tr>
 <tr>
 <td> getreceivedbyaddress </td>
-<td> [astracoinaddress] [minconf=1] </td>
-<td> Returns the total amount received by <astracoinaddress< in transactions with at least [minconf] confirmations. While some might consider this obvious, value reported by this only considers *receiving* transactions. It does not check payments that have been made *from* this address. In other words, this is not "getaddressbalance". Works only for addresses in the local wallet, external addresses will always show 0. </td>
+<td> [sinovateaddress] [minconf=1] </td>
+<td> Returns the total amount received by <sinovateaddress< in transactions with at least [minconf] confirmations. While some might consider this obvious, value reported by this only considers *receiving* transactions. It does not check payments that have been made *from* this address. In other words, this is not "getaddressbalance". Works only for addresses in the local wallet, external addresses will always show 0. </td>
 <td> N
 </td></tr>
 <tr>
@@ -299,7 +297,7 @@ All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowerc
 </td></tr>
 <tr>
 <td> importprivkey </td>
-<td> [astracoinprivkey] [label] </td>
+<td> [sinovateprivkey] [label] </td>
 <td> Adds a private key (as returned by dumpprivkey) to your wallet. </td>
 <td> Y
 </td></tr>
@@ -335,7 +333,7 @@ All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowerc
 </li><li> "amount": total amount received by the address
 </li><li> "confirmations": number of confirmations of the most recent transaction included
 </li></ul>
-<p>To get a list of accounts on the system, execute astracoind listreceivedbyaddress 0 true
+<p>To get a list of accounts on the system, execute sinovated listreceivedbyaddress 0 true
 </p>
 </td>
 <td> N
@@ -373,13 +371,13 @@ All [Astracoin API](http://api.astra-coin.com) commands are supported, in lowerc
 </td></tr>
 <tr>
 <td> sendtoaddress </td>
-<td> [astracoinaddress] [amount] [comment] [comment-to] </td>
+<td> [sinovateaddress] [amount] [comment] [comment-to] </td>
 <td> <amount< is a real and is rounded to 8 decimal places. Returns the transaction ID <txid< if successful. </td>
 <td> Y
 </td></tr>
 <tr>
 <td> setaccount </td>
-<td> [astracoinaddress] [account] </td>
+<td> [sinovateaddress] [account] </td>
 <td> Sets the account associated with the given address. Assigning address that is already assigned to the same account will create a new address associated with that account. </td>
 <td> N
 </td></tr>
@@ -393,7 +391,7 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 </td></tr>
 <tr>
 <td> signmessage </td>
-<td> [astracoinaddress] [message] </td>
+<td> [sinovateaddress] [message] </td>
 <td> Sign a message with the private key of an address. </td>
 <td> Y
 </td></tr>
@@ -406,18 +404,18 @@ Generation is limited to [genproclimit] processors, -1 is unlimited. </td>
 <tr>
 <td> stop </td>
 <td> </td>
-<td> Stop astracoin server. </td>
+<td> Stop sinovate server. </td>
 <td> N
 </td></tr>
 <tr>
 <td> validateaddress </td>
 <td> [astracoinaddress] </td>
-<td> Return information about [astracoinaddress]. </td>
+<td> Return information about [sinovateaddress]. </td>
 <td> N
 </td></tr>
 <tr>
 <td> verifymessage </td>
-<td> [astracoinaddress] [signature] [message] </td>
+<td> [sinovateaddress] [signature] [message] </td>
 <td> Verify a signed message. </td>
 <td> N
 </td></tr>
@@ -446,12 +444,12 @@ You may pass options to the initialization function or to the `set` method.
 
 ```js
 
-var astracoin = require('astracoin')({
+var sinovate = require('astracoin')({
     user:'user'
 })
 
-astracoin.set('pass', 'somn')
-astracoin.set({port:7142})
+sinovate.set('pass', 'somn')
+sinovate.set({port:7142})
 
 ```
 
@@ -469,7 +467,7 @@ Available options and default values:
 
 With an encryped wallet, any operation that accesses private keys requires a wallet unlock. A wallet is unlocked using the `walletpassphrase <passphrase> <timeout>` JSON-RPC method: the wallet will relock after `timeout` seconds.
 
-You may pass an optional function `passphrasecallback` to the `node-astracoin` initialization function to manage wallet unlocks. `passphrasecallback` should be a function accepting three arguments:
+You may pass an optional function `passphrasecallback` to the `node-sinovate` initialization function to manage wallet unlocks. `passphrasecallback` should be a function accepting three arguments:
 
     function(command, args, callback) {}
 
@@ -480,7 +478,7 @@ You may pass an optional function `passphrasecallback` to the `node-astracoin` i
 You may hard code your passphrase (not recommended) as follows:
 
 ```js
-var astracoin = require('node-astracoin')({
+var sinovate = require('node-astracoin')({
     passphrasecallback: function(command, args, callback) {
         callback(null, 'passphrase', 30);
     }
@@ -497,7 +495,7 @@ var rl = readline.createInterface({
   output: process.stdout
 })
 
-var astracoin = require('node-astracoin')({
+var sinovate = require('node-sinovate')({
   passphrasecallback: function(command, args, callback) {
     rl.question('Enter passphrase for "' + command + '" operation: ', function(passphrase) {
       if (passphrase) {
@@ -512,20 +510,20 @@ var astracoin = require('node-astracoin')({
 
 ### Secure RPC with SSL
 
-By default `Astracoind` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `Astracoind` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `Astracoin.conf`:
+By default `sinovated` exposes its JSON-RPC interface via HTTP; that is, all RPC commands are transmitted in plain text across the network! To secure the JSON-RPC channel you can supply `sinovated` with a self-signed SSL certificate and an associated private key to enable HTTPS. For example, in your `sinovate.conf`:
 
     rpcssl=1
-    rpcsslcertificatechainfile=/etc/ssl/certs/Astracoind.crt
-    rpcsslprivatekeyfile=/etc/ssl/private/Astracoind.pem
+    rpcsslcertificatechainfile=/etc/ssl/certs/sinovated.crt
+    rpcsslprivatekeyfile=/etc/ssl/private/sinovated.pem
 
-In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `Astracoind.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-astracoin is secured!
+In order to securely access an SSL encrypted JSON-RPC interface you need a copy of the self-signed certificate from the server: in this case `sinovated.crt`. Pass your self-signed certificate in the `ca` option and set `https: true` and node-astracoin is secured!
     
 ```js
 var fs = require('fs')
 
-var ca = fs.readFileSync('Astracoind.crt')
+var ca = fs.readFileSync('sinovated.crt')
 
-var astracoin = require('node-astracoin')({
+var sinovate = require('node-sinovate')({
   user: 'rpcusername',
   pass: 'rpcpassword',
   https: true,
